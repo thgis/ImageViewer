@@ -10,7 +10,6 @@ GetFullPath ensures that a relative path can be converted to a absolute path (ht
 A collection of snapshots of these scripts are included. For updates wee their cources
 
 example usage:
-run setup.m
 ps = ParameterStore.instance();
 ps.set('defaultLoggerPath','logs'); % otherwise working directory will be used
 ps.set('defaultImageSaverPath','images'); % otherwise working directory will be used
@@ -21,4 +20,4 @@ img2 = imread();
 iw.addImageFunc(iw.output,img1,'first image');
 iw.addImageFunc(iw.output,img2,'second image');
 
-
+The code ships with an example in imageViewerExample.m
