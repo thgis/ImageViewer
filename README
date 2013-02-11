@@ -1,0 +1,24 @@
+This simple GUI lets you browse through images after they are created.
+
+It depends on 5 other scripts:
+ParameterStore: Can be used to store parameter values. It is used by the ImageSaver and Logger class. Any other function or class can also use it
+ImageSaver enables you to save the image you are currently viewing. This class is used by ImageViewer but can also be used by any other class
+Logger: creates a log that can be written to by any script
+Singleton ensures that you only work with a single instance of the classes (http://www.mathworks.com/matlabcentral/fileexchange/24911-design-pattern-singleton-creational)
+GetFullPath ensures that a relative path can be converted to a absolute path (http://www.mathworks.com/matlabcentral/fileexchange/28249-getfullpath)
+
+A collection of snapshots of these scripts are included. For updates wee their cources
+
+example usage:
+run setup.m
+ps = ParameterStore.instance();
+ps.set('defaultLoggerPath','logs'); % otherwise working directory will be used
+ps.set('defaultImageSaverPath','images'); % otherwise working directory will be used
+
+iw=ImageViewer();
+img1 = imread();
+img2 = imread();
+iw.addImageFunc(iw.output,img1,'first image');
+iw.addImageFunc(iw.output,img2,'second image');
+
+
